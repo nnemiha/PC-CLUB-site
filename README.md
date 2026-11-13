@@ -1,45 +1,16 @@
-<h2 align="center">GameX - Gaming website</h2>
+# Marinovani — одностраничный сайт игрового клуба
 
-![](https://komarev.com/ghpvc/?username=mscbuild) 
- ![](https://img.shields.io/github/license/mscbuild/gaming-website) 
- ![](https://img.shields.io/github/repo-size/mscbuild/gaming-website)
-![](https://img.shields.io/badge/PRs-Welcome-green)
-![](https://img.shields.io/badge/code%20style-html-green)
-![](https://img.shields.io/github/stars/mscbuild)
-![](https://img.shields.io/badge/Topic-Github-lighred)
-![](https://img.shields.io/website?url=https%3A%2F%2Fgithub.com%2Fmscbuild)
+Статический сайт на HTML, CSS и JavaScript. Откройте `index.html` в браузере или запустите локальный HTTP-сервер в этой папке (`python -m http.server 8000`). Сборка и установка пакетов не нужны.
 
- GameX is a fully responsive eSports gaming website. Responsive for all devices, built using HTML, CSS, and JavaScript. GAMEX is a colorful and pixel-perfect template. You can use it in live Game Streaming, e-Sports, Gaming News, Gaming tools sales, and set up live Game Battles.
- <br>
-<a href="https://codewithsadee.github.io/gamex/"><strong>➥ Live Demo</strong></a>
- 
-  
- ### Demo Screeshots
+## Перед публикацией
 
-![GameX Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+- Замените демонстрационные цены и описание пакетов в `index.html` и `assets/js/script.js` на подтверждённые. Сейчас на сайте явно указано, что они примерные.
+- Укажите реальный адрес, контакты, часы работы и ссылку на запись. Пока бронирование не подключено: кнопки «Подробнее» показывают описание тарифа, не оформляют заказ.
+- После выбора домена добавьте абсолютный canonical URL, `og:url`, адрес `og:image`, `robots.txt` и `sitemap.xml` с настоящим адресом страницы. Не подставляйте вымышленный домен.
+- Если клуб находится не в Калининграде, поправьте город в тексте, `<title>`, description и JSON-LD.
 
-### Prerequisites
+## Тарифы и будущая интеграция
 
-Before you begin, ensure you have met the following requirements:
+Карточки находятся в `index.html` и имеют стабильные атрибуты `data-plan-id`: `pc-hour`, `pc-evening`, `pc-day`, `console-hour`. Эти же ключи находятся в объекте `plans` в `assets/js/script.js`. При подключении БД/API можно заменить локальный объект ответом сервера и использовать ID как внешний ключ. До подключения сервера сайт не собирает персональные данные и не подтверждает бронирование.
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-### Run Locally
-
-To run **GameX** locally, run this command on your git bash:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/mscbuild/gaming-website.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/mscbuild/gaming-website.git
-```
-
-### License
-
-This project is **free to use** and does not contains any license.
+Логотип в `assets/images/marinovani-mark.svg` — чистая векторная адаптация знака из предоставленного изображения, без клетчатого фона. Исходный растровый файл логотипа в папке шаблона отсутствовал.
