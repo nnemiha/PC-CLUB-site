@@ -73,7 +73,29 @@
     <section class="formats section-pad" id="formats" aria-labelledby="formats-title"><div class="container"><p class="section-kicker">03 / ФОРМАТЫ</p><h2 id="formats-title">КАК БУДЕМ <span>ИГРАТЬ?</span></h2><div class="format-grid"><div class="format-panel pc-panel"><span class="format-index">01 — ПК ЗОНА</span><div class="format-symbol">⌘</div><h3>ТВОЙ МАТЧ<br>НАЧИНАЕТСЯ ЗДЕСЬ</h3><p>Короткая сессия, вечер с командой или целый игровой день.</p><a href="#tariffs">Тарифы на ПК <span aria-hidden="true">↗</span></a></div><div class="format-panel console-panel"><span class="format-index">02 — КОНСОЛЬНАЯ ЗОНА</span><div class="format-symbol">✣</div><h3>ОДИН ЭКРАН.<br>МНОГО ЭМОЦИЙ.</h3><p>Локальные соревнования и игры с друзьями на одном диване.</p><a href="#tariffs">Тариф на консоль <span aria-hidden="true">↗</span></a></div></div></div></section>
 
     <section class="faq section-pad" id="faq" aria-labelledby="faq-title"><div class="container faq-grid"><div><p class="section-kicker">04 / ВОПРОСЫ</p><h2 id="faq-title">ПЕРЕД <span>ИГРОЙ.</span></h2></div><div><details><summary>Можно ли выбрать тариф заранее?</summary><p>Да, на сайте можно посмотреть доступные форматы. Онлайн-бронирование появится после подключения системы записи.</p></details><details><summary>Цены на странице окончательные?</summary><p>Пока это пример тарифной сетки. Перед открытием записи здесь появятся подтверждённые цены и условия.</p></details><details><summary>Где находится клуб?</summary><p>Клуб планируется представить в Калининграде. Точный адрес и контакты будут добавлены после подтверждения.</p></details></div></div></section>
+    <section id="booking" class="section-pad">
+      <div class="container">
+        <p class="section-kicker">ЗАПИСЬ / MARINOVANI</p>
+        <h2>ЗАБРОНИРУЙ <span>МЕСТО.</span></h2>
+        <p>Оставь заявку здесь или в Telegram. Место подтверждает администратор.</p>
+        <form id="booking-form">
+          <label>Зона и цена<select name="zone" required><option value="">Загружаем…</option></select></label>
+          <label>Имя<input name="name" autocomplete="name" minlength="2" maxlength="80" required></label>
+          <label>Телефон с кодом страны<input name="phone" type="tel" autocomplete="tel" placeholder="+7 999 123-45-67" maxlength="30" required></label>
+          <label>Дата и время<input name="date" type="datetime-local" required></label>
+          <small>Время клуба: Калининград (UTC+2).</small>
+          <label>Количество часов<input name="hours" type="number" min="1" max="12" value="1" required></label>
+          <p id="booking-price"></p>
+          <label class="booking-consent"><input name="consent" type="checkbox" required><span>Согласен передать имя и телефон клубу для связи по заявке.</span></label>
+          <button class="button button-primary" type="submit" disabled>Отправить заявку</button>
+          <a class="inline-link" id="booking-telegram" href="https://t.me/imangelo_bot">Или записаться в Telegram ↗</a>
+          <p id="booking-result" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
   </main>
+  <link rel="stylesheet" href="./assets/css/booking.css">
+  <script src="./assets/js/booking.js" defer></script>
 
   <footer class="footer"><div class="container footer-main"><div><a class="brand" href="#top"><img src="./assets/images/marinovani-mark.svg" width="50" height="50" alt=""><span class="brand-name">MARINOVANI<small>ИГРОВОЙ КЛУБ</small></span></a><p>Если КЗ — то Marinovani!</p></div><div><span class="footer-label">НАВИГАЦИЯ</span><a href="#about">О клубе</a><a href="#tariffs">Тарифы</a><a href="#formats">Форматы</a></div><div><span class="footer-label">ЛОКАЦИЯ</span><p>Калининград<br>Адрес и контакты скоро появятся</p></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Marinovani</span><span>ИГРАЙ В СВОЁМ РИТМЕ</span><a href="#top">Наверх ↑</a></div></footer>
 

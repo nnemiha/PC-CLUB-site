@@ -131,7 +131,7 @@ async def notify(bot):
             rows = await pool.fetch('''SELECT b.*, z.title FROM bookings b JOIN zones z ON z.code=b.zone
                 WHERE NOT notified ORDER BY b.id LIMIT 10''')
             for r in rows:
-                user = '@' + r['username'] if r['username'] else str(r['user_id'])
+                user = 'заявка с сайта' if r['user_id'] == 0 else ('@' + r['username'] if r['username'] else str(r['user_id']))
                 await bot.send_message(owner, f'Новая заявка №{r["id"]}\n{r["title"]}\n'
                     f'{r["customer_name"]} ({user})\n'
                     f'{r["starts_at"].astimezone(tz).strftime("%d.%m.%Y %H:%M")} ({tz.key})\n'
