@@ -1,0 +1,7 @@
+.env
+.env.*
+.git
+*.sql
+*.dump
+data
+__pycache__
