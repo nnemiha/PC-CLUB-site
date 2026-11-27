@@ -41,6 +41,8 @@ services:
     command: ["python", "api.py"]
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Fill POSTGRES_PASSWORD in .env}
+      ADMIN_SETUP_KEY: ${ADMIN_SETUP_KEY:-}
+      ADMIN_COOKIE_SECURE: ${ADMIN_COOKIE_SECURE:-false}
     depends_on:
       db:
         condition: service_healthy

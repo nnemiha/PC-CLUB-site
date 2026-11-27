@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Заявки — Marinovani</title>
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <script src="/assets/js/admin.js" defer></script>
+</head>
+<body>
+  <header><a href="/">MARINOVANI</a><span>Кабинет владельца</span></header>
+  <main>
+    <p id="notice" role="status" aria-live="polite">Проверяем вход…</p>
+    <section id="auth" hidden>
+      <h1 id="auth-title">Вход администратора</h1>
+      <p id="setup-hint" hidden>Создай аккаунт владельца. Код регистрации находится в серверном .env (ADMIN_SETUP_KEY).</p>
+      <form id="auth-form">
+        <label id="setup-field" hidden>Код регистрации<input name="setup_key" type="password" autocomplete="off"></label>
+        <label>Логин<input name="login" required minlength="3" maxlength="40" autocomplete="username"></label>
+        <label>Пароль<input name="password" type="password" required maxlength="128" autocomplete="current-password"></label>
+        <button id="auth-submit">Войти</button>
+      </form>
+    </section>
+    <section id="dashboard" hidden>
+      <div class="heading"><h1>Заявки</h1><button id="logout" class="secondary">Выйти</button></div>
+      <p id="counts"></p>
+      <div class="tools"><label>Статус<select id="filter"><option value="">Все</option><option value="new">Новые</option><option value="confirmed">Подтверждённые</option><option value="cancelled">Отменённые</option></select></label><button id="refresh">Обновить</button></div>
+      <p class="muted">Обновляется каждые 15 секунд. Статус меняется в базе; с клиентом нужно связаться самостоятельно.</p>
+      <div id="bookings"></div>
+      <nav class="pagination"><button id="previous">← Назад</button><span id="page"></span><button id="next">Дальше →</button></nav>
+    </section>
+  </main>
+</body>
+</html>

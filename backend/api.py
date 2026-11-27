@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from aiohttp import web
 from common import connect
+from admin import initialize, install
 
 TZ = ZoneInfo('Europe/Kaliningrad')
 
@@ -60,11 +61,13 @@ async def create_booking(request):
 
 async def lifecycle(app):
     app['pool'] = await connect()
+    await initialize(app['pool'])
     yield
     await app['pool'].close()
 
 app = web.Application(client_max_size=4096)
 app.cleanup_ctx.append(lifecycle)
+install(app)
 app.add_routes([
     web.get('/api/zones', zones),
     web.get('/api/health', health),
