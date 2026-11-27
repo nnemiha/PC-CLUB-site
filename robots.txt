@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin.html
+Disallow: /api/admin/
+Sitemap: http://89.127.206.24:8101/sitemap.xml
